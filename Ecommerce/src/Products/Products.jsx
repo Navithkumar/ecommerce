@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import '/src/Products/products.css';
 function Products() {
     const [products, setProducts] = useState([]);
     const navigate = useNavigate();
@@ -34,7 +35,7 @@ function Products() {
                 {products.length > 0 ? (
                     <div className="row">
                         {products.map((product) => (
-                            <div className="col-md-4 mb-4" key={product.id}>
+                            <div className="col-md-4 mb-2" key={product.id}>
                                 <div
                                     className="card h-auto"
                                     onClick={() => productDetails(product.id)}
