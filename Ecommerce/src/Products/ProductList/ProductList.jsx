@@ -20,7 +20,6 @@ function ProductDetails() {
                     },
                 );
                 setProduct(res.data.data);
-                document.title = `Buy ${product_name}"-"${product_size}"-"${product_colour}`;
             } catch (err) {
                 console.error('Error fetching product:', err);
             }
@@ -100,6 +99,12 @@ function ProductDetails() {
                             Enter pincode to check availability and delivery
                             time
                         </p>
+                        <p>
+                            Please enter PIN code to check delivery time & Pay
+                            on Delivery Availability{' '}
+                        </p>
+                        <p>100% Original Products Pay on delivery might be</p>
+                        <p>available Easy 14 days returns and exchanges</p>
                     </div>
                 </div>
             </div>
