@@ -105,8 +105,8 @@
     margin-top: 1.5rem;
 }
 
-.add-to-bag,
-.wishlist {
+.add-to-cart,
+.buynow {
     flex: 1;
     padding: 0.75rem;
     font-weight: 600;
@@ -117,7 +117,7 @@
     transition: 0.2s ease;
 }
 
-.add-to-bag {
+.add-to-cart{
     background-color: #ff3e6c;
     color: white;
 }
@@ -126,12 +126,12 @@
     background-color: #e0335a;
 }
 
-.wishlist {
+.buynow {
     background-color: white;
     border: 1px solid #aaa;
 }
 
-.wishlist:hover {
+.buynow:hover {
     background-color: #f0f0f0;
 }
 

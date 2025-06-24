@@ -1,0 +1,24 @@
+.price-line {
+    text-decoration: line-through;
+    color: grey;
+    font-size: 0.9rem;
+}
+
+.discount-text {
+    color: green;
+    font-size: 0.9rem;
+}
+
+.coupon-text {
+    color: #ff4081;
+    cursor: pointer;
+}
+
+.section-title {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.card-shadow {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}

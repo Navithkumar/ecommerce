@@ -27,6 +27,43 @@ function ProductDetails() {
 
         fetchProduct();
     }, [id]);
+
+    const handleAddToCart = async (productId, quantity = 1) => {
+        try {
+            const token = localStorage.getItem('access');
+            if (!token) {
+                alert('You need to login first!');
+                return;
+            }
+
+            const response = await axios.post(
+                'http://127.0.0.1:8000/api/v1/cart/create',
+                {
+                    product_id: productId,
+                    quantity: quantity,
+                },
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                },
+            );
+
+            alert('Item added to your cart!');
+        } catch (error) {
+            if (error.response && error.response.status === 401) {
+                alert('Session expired or not logged in. Please login again.');
+            } else {
+                console.error('Error adding to cart:', error);
+                alert('Failed to add item to cart.');
+            }
+        }
+    };
+
+    const handleBuyNow = () => {
+        alert('test');
+    };
+
     useEffect(() => {
         if (product) {
             document.title = `Buy ${product.product_name} - ${product.product_size} - ${product.product_colour}`;
@@ -89,8 +126,15 @@ function ProductDetails() {
                     </div>
 
                     <div className="action-buttons">
-                        <button className="add-to-bag">ADD TO BAG</button>
-                        <button className="wishlist">WISHLIST</button>
+                        <button
+                            className="add-to-cart"
+                            onClick={() => handleAddToCart(product.id)}
+                        >
+                            ADD TO CART
+                        </button>
+                        <button className="buynow" onClick={handleBuyNow}>
+                            BUY NOW
+                        </button>
                     </div>
 
                     <div className="delivery">

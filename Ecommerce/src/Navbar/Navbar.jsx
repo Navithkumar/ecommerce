@@ -5,10 +5,13 @@ import { Link } from 'react-router-dom';
 import Home_logo from '../assets/home_images/ecommerce-arrow.jpg';
 import { jwtDecode } from 'jwt-decode';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 function Navbar() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [profile, setProfile] = useState(null);
     const [showProfilePopup, setShowProfilePopup] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         document.title = 'Home';
@@ -47,6 +50,10 @@ function Navbar() {
         } catch (err) {
             console.error(err.response?.data || err.message);
         }
+    };
+
+    const handleBag = () => {
+        navigate('/cartdetails');
     };
 
     const handleLogout = () => {
@@ -111,7 +118,7 @@ function Navbar() {
                 </div>
                 <div>
                     <i className="bi bi-bag"></i>
-                    <span>Bag</span>
+                    <span onClick={handleBag}>Bag</span>
                 </div>
             </div>
         </div>
