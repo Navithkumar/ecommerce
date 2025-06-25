@@ -106,7 +106,7 @@ function Navbar() {
                                 <strong>{profile.username}</strong>
                             </p>
                             <p>{profile.email}</p>
-                            <p>Role: {profile.role || 'User'}</p>
+                            <p>Role: {profile.role == 1 ? 'Admin' : 'User'}</p>
                             <button onClick={handleLogout}>Logout</button>
                         </div>
                     )}
