@@ -8,6 +8,9 @@ import Register from './Register/Register';
 import ProductList from './Products/ProductList/ProductList';
 import Addcart from './AddCart/Addcart';
 import CartDetails from './AddCart/CartDetails/CartDetails';
+import Addproduct from './Add_Product/Addproduct';
+import CreateProduct from './Add_Product/Create_Product/CreateProduct';
+import CreateCategory from './Add_Product/Create_category/CreateCategory';
 
 const Router = createBrowserRouter([
     { path: '/login', element: <Login /> },
@@ -16,6 +19,9 @@ const Router = createBrowserRouter([
     { path: '/product/:id', element: <ProductList /> },
     { path: '/addcart/:id', element: <Addcart /> },
     { path: '/cartdetails', element: <CartDetails /> },
+    { path: '/add-product', element: <Addproduct /> },
+    { path: '/create-product', element: <CreateProduct /> },
+    { path: '/create-category', element: <CreateCategory /> },
 ]);
 
 createRoot(document.getElementById('root')).render(

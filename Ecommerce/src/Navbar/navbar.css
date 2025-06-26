@@ -83,3 +83,24 @@
     border-radius: 8px;
     font-size: 14px;
 }
+.profile-popup {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.profile-popup h6 {
+    font-weight: 600;
+}
+
+.profile-popup button {
+    font-size: 0.875rem;
+}
+.profile-popup.card.shadow.border-0 {
+    margin-top: 0% !important;
+    margin-left: 10rem;
+}

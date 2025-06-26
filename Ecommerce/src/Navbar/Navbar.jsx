@@ -52,6 +52,10 @@ function Navbar() {
         }
     };
 
+    const handleCreate = () => {
+        navigate('/add-product');
+    };
+
     const handleBag = () => {
         navigate('/cartdetails');
     };
@@ -101,13 +105,52 @@ function Navbar() {
                     )}
 
                     {showProfilePopup && isLoggedIn && profile && (
-                        <div className="profile-popup">
-                            <p>
-                                <strong>{profile.username}</strong>
-                            </p>
-                            <p>{profile.email}</p>
-                            <p>Role: {profile.role == 1 ? 'Admin' : 'User'}</p>
-                            <button onClick={handleLogout}>Logout</button>
+                        <div
+                            className="profile-popup card shadow  border-0"
+                            style={{ width: '250px' }}
+                        >
+                            <div className="d-flex align-items-center mb-3">
+                                <div
+                                    className="bg-primary text-white rounded-circle d-flex justify-content-center align-items-center"
+                                    style={{ width: '40px', height: '40px' }}
+                                >
+                                    {profile.username?.charAt(0).toUpperCase()}
+                                </div>
+                                <div className="ms-3">
+                                    <h6 className="mb-0">{profile.username}</h6>
+                                    <small className="text-muted">
+                                        {profile.email}
+                                    </small>
+                                </div>
+                            </div>
+
+                            <div className="mb-3">
+                                <span className="badge bg-secondary">
+                                    Role:{' '}
+                                    {profile.role === 1 ? 'Admin' : 'User'}
+                                </span>
+                            </div>
+
+                            {profile.role === 1 && (
+                                <>
+                                    <button className="btn btn-sm btn-outline-primary w-100 mb-2">
+                                        Add User
+                                    </button>
+                                    <button
+                                        onClick={handleCreate}
+                                        className="btn btn-sm btn-outline-primary w-100 mb-2"
+                                    >
+                                        Create
+                                    </button>
+                                </>
+                            )}
+
+                            <button
+                                className="btn btn-sm btn-outline-danger w-100"
+                                onClick={handleLogout}
+                            >
+                                Logout
+                            </button>
                         </div>
                     )}
                 </div>
