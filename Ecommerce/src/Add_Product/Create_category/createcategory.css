@@ -1,0 +1,13 @@
+.my-5 {
+    margin-top: 6rem !important;
+    margin-bottom: 3rem !important;
+}
+.hover-shadow {
+    transition: box-shadow 0.3s ease;
+}
+.hover-shadow:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.mt-5 {
+    margin-top: 6rem !important;
+}
